@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/bookings', [TransactionController::class, 'booking']);
+// Route::get('/index', [TransactionController::class, 'index']);
+Route::get('/easy', [TransactionController::class, 'getBookingEasy']);
+Route::get('/moderate', [TransactionController::class, 'getBookingModerate']);
+Route::get('/challenging', [TransactionController::class, 'getBookingChallenging']);
+Route::get('/difficult', [TransactionController::class, 'getBookingDifficult']);
